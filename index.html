@@ -1,0 +1,1182 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Learn Online Academy - Curso de Portugués Profesional</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;500;600;700&family=Playfair+Display:wght@600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary: #2563eb;
+            --primary-dark: #1e40af;
+            --secondary: #0f766e;
+            --accent: #f97316;
+            --bg-light: #f8fafc;
+            --bg-dark: #0f172a;
+            --text-dark: #1e293b;
+            --text-light: #94a3b8;
+            --border: #e2e8f0;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Sora', sans-serif;
+            color: var(--text-dark);
+            background: var(--bg-light);
+            line-height: 1.6;
+        }
+
+        /* Header & Navigation */
+        header {
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid var(--border);
+            padding: 1rem 2rem;
+        }
+
+        .navbar {
+            max-width: 1400px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 2rem;
+        }
+
+        .logo {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--primary);
+            text-decoration: none;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+            list-style: none;
+            align-items: center;
+        }
+
+        .nav-links a {
+            color: var(--text-dark);
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 0.95rem;
+            transition: color 0.3s ease;
+        }
+
+        .nav-links a:hover {
+            color: var(--primary);
+        }
+
+        .lang-toggle {
+            background: var(--border);
+            border: none;
+            padding: 0.4rem 0.8rem;
+            border-radius: 4px;
+            cursor: pointer;
+            font-weight: 600;
+            color: var(--text-dark);
+            transition: all 0.3s ease;
+        }
+
+        .lang-toggle:hover {
+            background: var(--primary);
+            color: white;
+        }
+
+        .cta-header {
+            background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
+            color: white;
+            padding: 0.7rem 1.5rem;
+            border-radius: 6px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 0.9rem;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .cta-header:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 24px rgba(37, 99, 235, 0.3);
+        }
+
+        /* Hero Section */
+        .hero {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 6rem 2rem;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+            min-height: 90vh;
+        }
+
+        .hero-content h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: clamp(2.5rem, 5vw, 4rem);
+            font-weight: 800;
+            line-height: 1.1;
+            margin-bottom: 1.5rem;
+            color: var(--text-dark);
+        }
+
+        .hero-content .highlight {
+            background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .hero-content p {
+            font-size: 1.1rem;
+            color: var(--text-light);
+            margin-bottom: 2rem;
+            line-height: 1.8;
+        }
+
+        .hero-buttons {
+            display: flex;
+            gap: 1.5rem;
+            flex-wrap: wrap;
+        }
+
+        .btn {
+            padding: 1rem 2rem;
+            border: none;
+            border-radius: 8px;
+            font-size: 1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            display: inline-block;
+        }
+
+        .btn-primary {
+            background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
+            color: white;
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 12px 32px rgba(37, 99, 235, 0.4);
+        }
+
+        .btn-secondary {
+            background: var(--bg-light);
+            color: var(--primary);
+            border: 2px solid var(--primary);
+        }
+
+        .btn-secondary:hover {
+            background: var(--primary);
+            color: white;
+        }
+
+        .hero-visual {
+            position: relative;
+            height: 500px;
+            background: linear-gradient(135deg, rgba(37, 99, 235, 0.1) 0%, rgba(15, 118, 110, 0.1) 100%);
+            border-radius: 16px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1rem;
+            color: var(--text-light);
+            overflow: hidden;
+        }
+
+        .hero-visual::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            right: -10%;
+            width: 400px;
+            height: 400px;
+            background: radial-gradient(circle, rgba(37, 99, 235, 0.2) 0%, transparent 70%);
+            border-radius: 50%;
+            animation: float 6s ease-in-out infinite;
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(30px); }
+        }
+
+        /* Features Section */
+        .features {
+            background: white;
+            padding: 6rem 2rem;
+            margin: 4rem 0;
+        }
+
+        .section-header {
+            max-width: 1400px;
+            margin: 0 auto 4rem;
+            text-align: center;
+        }
+
+        .section-header h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: clamp(2rem, 4vw, 3rem);
+            font-weight: 700;
+            margin-bottom: 1rem;
+            color: var(--text-dark);
+        }
+
+        .section-header p {
+            font-size: 1.1rem;
+            color: var(--text-light);
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .features-grid {
+            max-width: 1400px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+        }
+
+        .feature-card {
+            padding: 2rem;
+            border-radius: 12px;
+            background: var(--bg-light);
+            border: 1px solid var(--border);
+            transition: all 0.3s ease;
+            text-align: center;
+        }
+
+        .feature-card:hover {
+            transform: translateY(-8px);
+            border-color: var(--primary);
+            box-shadow: 0 12px 32px rgba(37, 99, 235, 0.1);
+        }
+
+        .feature-icon {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            color: var(--primary);
+        }
+
+        .feature-card h3 {
+            font-size: 1.2rem;
+            margin-bottom: 0.5rem;
+            color: var(--text-dark);
+        }
+
+        .feature-card p {
+            color: var(--text-light);
+            font-size: 0.95rem;
+        }
+
+        /* Levels Section */
+        .levels {
+            padding: 6rem 2rem;
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .levels-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .level-card {
+            background: white;
+            border: 2px solid var(--border);
+            border-radius: 12px;
+            padding: 2.5rem;
+            text-align: center;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .level-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: linear-gradient(90deg, var(--primary), var(--secondary));
+            transform: scaleX(0);
+            transform-origin: left;
+            transition: transform 0.3s ease;
+        }
+
+        .level-card:hover {
+            border-color: var(--primary);
+            box-shadow: 0 12px 32px rgba(37, 99, 235, 0.1);
+        }
+
+        .level-card:hover::before {
+            transform: scaleX(1);
+        }
+
+        .level-badge {
+            display: inline-block;
+            background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
+            color: white;
+            padding: 0.4rem 1rem;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            margin-bottom: 1rem;
+        }
+
+        .level-card h3 {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+            color: var(--text-dark);
+        }
+
+        .level-card p {
+            color: var(--text-light);
+            margin-bottom: 2rem;
+            min-height: 60px;
+        }
+
+        /* Schedules Section */
+        .schedules {
+            background: linear-gradient(135deg, var(--bg-dark) 0%, #1a3a52 100%);
+            color: white;
+            padding: 6rem 2rem;
+        }
+
+        .schedules-container {
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .schedules .section-header h2,
+        .schedules .section-header p {
+            color: white;
+        }
+
+        .schedules-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .schedule-card {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            border-radius: 12px;
+            padding: 2rem;
+            text-align: center;
+            transition: all 0.3s ease;
+        }
+
+        .schedule-card:hover {
+            background: rgba(255, 255, 255, 0.15);
+            border-color: rgba(255, 255, 255, 0.4);
+            transform: translateY(-8px);
+        }
+
+        .schedule-time {
+            font-size: 2rem;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+        }
+
+        .schedule-card p {
+            color: rgba(255, 255, 255, 0.8);
+            margin-bottom: 1.5rem;
+        }
+
+        /* Pricing Section */
+        .pricing {
+            padding: 6rem 2rem;
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .pricing-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .price-card {
+            background: white;
+            border: 2px solid var(--border);
+            border-radius: 12px;
+            padding: 2.5rem;
+            text-align: center;
+            transition: all 0.3s ease;
+            position: relative;
+        }
+
+        .price-card.featured {
+            border-color: var(--primary);
+            box-shadow: 0 12px 32px rgba(37, 99, 235, 0.2);
+            transform: scale(1.05);
+        }
+
+        .price-card.featured::before {
+            content: 'POPULAR';
+            position: absolute;
+            top: -12px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
+            color: white;
+            padding: 0.4rem 1rem;
+            border-radius: 20px;
+            font-size: 0.75rem;
+            font-weight: 700;
+        }
+
+        .price-card h3 {
+            font-size: 1.3rem;
+            margin-bottom: 1rem;
+            color: var(--text-dark);
+        }
+
+        .price-amount {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: var(--primary);
+            margin-bottom: 0.5rem;
+        }
+
+        .price-period {
+            color: var(--text-light);
+            margin-bottom: 2rem;
+        }
+
+        .price-features {
+            list-style: none;
+            margin: 2rem 0;
+            text-align: left;
+        }
+
+        .price-features li {
+            padding: 0.7rem 0;
+            color: var(--text-light);
+            border-bottom: 1px solid var(--border);
+        }
+
+        .price-features li:last-child {
+            border-bottom: none;
+        }
+
+        .price-features li::before {
+            content: '✓ ';
+            color: var(--primary);
+            font-weight: 700;
+            margin-right: 0.5rem;
+        }
+
+        /* Testimonials */
+        .testimonials {
+            background: var(--bg-light);
+            padding: 6rem 2rem;
+        }
+
+        .testimonials-container {
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .testimonials-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .testimonial-card {
+            background: white;
+            padding: 2rem;
+            border-radius: 12px;
+            border-left: 4px solid var(--primary);
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+        }
+
+        .testimonial-stars {
+            color: #fbbf24;
+            margin-bottom: 1rem;
+            font-size: 0.9rem;
+        }
+
+        .testimonial-text {
+            color: var(--text-dark);
+            margin-bottom: 1.5rem;
+            font-style: italic;
+        }
+
+        .testimonial-author {
+            font-weight: 600;
+            color: var(--text-dark);
+            margin-bottom: 0.2rem;
+        }
+
+        .testimonial-role {
+            color: var(--text-light);
+            font-size: 0.9rem;
+        }
+
+        /* CTA Section */
+        .cta-section {
+            background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
+            color: white;
+            padding: 5rem 2rem;
+            text-align: center;
+            margin: 4rem 0 0 0;
+        }
+
+        .cta-section h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: clamp(1.8rem, 4vw, 2.8rem);
+            margin-bottom: 1.5rem;
+        }
+
+        .cta-section p {
+            font-size: 1.1rem;
+            margin-bottom: 2rem;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .btn-white {
+            background: white;
+            color: var(--primary);
+            padding: 1rem 2.5rem;
+            border: none;
+            border-radius: 8px;
+            font-weight: 700;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            display: inline-block;
+        }
+
+        .btn-white:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 12px 32px rgba(0, 0, 0, 0.2);
+        }
+
+        /* FAQ Section */
+        .faq {
+            padding: 6rem 2rem;
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .faq-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+            margin-top: 3rem;
+        }
+
+        .faq-item {
+            border-bottom: 1px solid var(--border);
+            padding: 1.5rem 0;
+        }
+
+        .faq-question {
+            font-weight: 600;
+            color: var(--text-dark);
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            transition: color 0.3s ease;
+        }
+
+        .faq-question:hover {
+            color: var(--primary);
+        }
+
+        .faq-toggle {
+            font-size: 1.5rem;
+            transition: transform 0.3s ease;
+        }
+
+        .faq-item.active .faq-toggle {
+            transform: rotate(45deg);
+        }
+
+        .faq-answer {
+            color: var(--text-light);
+            margin-top: 1rem;
+            display: none;
+            line-height: 1.8;
+        }
+
+        .faq-item.active .faq-answer {
+            display: block;
+            animation: slideDown 0.3s ease;
+        }
+
+        @keyframes slideDown {
+            from {
+                opacity: 0;
+                transform: translateY(-10px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Footer */
+        footer {
+            background: var(--bg-dark);
+            color: white;
+            padding: 4rem 2rem;
+            margin-top: 6rem;
+        }
+
+        .footer-content {
+            max-width: 1400px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 3rem;
+            margin-bottom: 3rem;
+        }
+
+        .footer-section h3 {
+            margin-bottom: 1.5rem;
+            color: white;
+        }
+
+        .footer-section ul {
+            list-style: none;
+        }
+
+        .footer-section ul li {
+            margin-bottom: 0.8rem;
+        }
+
+        .footer-section ul li a {
+            color: rgba(255, 255, 255, 0.7);
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .footer-section ul li a:hover {
+            color: var(--primary);
+        }
+
+        .footer-bottom {
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            padding-top: 2rem;
+            text-align: center;
+            color: rgba(255, 255, 255, 0.6);
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .hero {
+                grid-template-columns: 1fr;
+                padding: 3rem 1.5rem;
+                min-height: auto;
+            }
+
+            .hero-visual {
+                height: 300px;
+                display: none;
+            }
+
+            .nav-links {
+                display: none;
+            }
+
+            .faq-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .price-card.featured {
+                transform: scale(1);
+            }
+
+            .hero-buttons {
+                flex-direction: column;
+            }
+
+            .btn {
+                width: 100%;
+                text-align: center;
+            }
+        }
+
+        /* Hidden by default */
+        .pt { display: none; }
+        .es { display: block; }
+
+        .es-show .es { display: block; }
+        .es-show .pt { display: none; }
+
+        .pt-show .pt { display: block; }
+        .pt-show .es { display: none; }
+    </style>
+</head>
+<body class="es-show">
+    <!-- Header -->
+    <header>
+        <div class="navbar">
+            <a href="#" class="logo">Learn Online Academy</a>
+            <ul class="nav-links">
+                <li><a href="#features" class="es">Características</a><a href="#features" class="pt">Características</a></li>
+                <li><a href="#levels" class="es">Niveles</a><a href="#levels" class="pt">Níveis</a></li>
+                <li><a href="#schedules" class="es">Horarios</a><a href="#schedules" class="pt">Horários</a></li>
+                <li><a href="#pricing" class="es">Precios</a><a href="#pricing" class="pt">Preços</a></li>
+            </ul>
+            <button class="lang-toggle" onclick="toggleLanguage()">PT</button>
+            <a href="#pricing" class="cta-header es">Inscríbete Ahora</a>
+            <a href="#pricing" class="cta-header pt">Inscreva-se Agora</a>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-content">
+            <h1>
+                <span class="es">Domina el <span class="highlight">Portugués Profesional</span></span>
+                <span class="pt">Domine o <span class="highlight">Português Profissional</span></span>
+            </h1>
+            <p class="es">Diseñado para profesionales que buscan expandir sus oportunidades laborales. Clases en línea con horarios flexibles: mañana, tarde y noche.</p>
+            <p class="pt">Projetado para profissionais que buscam expandir suas oportunidades de carreira. Aulas online com horários flexíveis: manhã, tarde e noite.</p>
+            <div class="hero-buttons">
+                <a href="#pricing" class="btn btn-primary es">Empezar Ahora</a>
+                <a href="#pricing" class="btn btn-primary pt">Começar Agora</a>
+                <a href="#features" class="btn btn-secondary es">Aprende Más</a>
+                <a href="#features" class="btn btn-secondary pt">Saiba Mais</a>
+            </div>
+        </div>
+        <div class="hero-visual">
+            <i class="fas fa-globe" style="font-size: 150px; opacity: 0.15;"></i>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section class="features" id="features">
+        <div class="section-header">
+            <h2 class="es">Por Qué Elegir Learn Online Academy</h2>
+            <h2 class="pt">Por Que Escolher Learn Online Academy</h2>
+            <p class="es">Enseñanza de calidad con profesores expertos y métodos probados</p>
+            <p class="pt">Ensino de qualidade com professores experientes e métodos comprovados</p>
+        </div>
+        <div class="features-grid">
+            <div class="feature-card">
+                <div class="feature-icon"><i class="fas fa-video"></i></div>
+                <h3 class="es">Clases en Vivo</h3>
+                <h3 class="pt">Aulas ao Vivo</h3>
+                <p class="es">Interactúa directamente con profesores nativos en tiempo real</p>
+                <p class="pt">Interaja diretamente com professores nativos em tempo real</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon"><i class="fas fa-clock"></i></div>
+                <h3 class="es">Horarios Flexibles</h3>
+                <h3 class="pt">Horários Flexíveis</h3>
+                <p class="es">Elige entre mañana, tarde o noche según tu disponibilidad</p>
+                <p class="pt">Escolha entre manhã, tarde ou noite conforme sua disponibilidade</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon"><i class="fas fa-certificate"></i></div>
+                <h3 class="es">Certificación</h3>
+                <h3 class="pt">Certificação</h3>
+                <p class="es">Obtén un certificado reconocido al completar el curso</p>
+                <p class="pt">Obtenha um certificado reconhecido ao concluir o curso</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon"><i class="fas fa-users"></i></div>
+                <h3 class="es">Grupos Pequeños</h3>
+                <h3 class="pt">Grupos Pequenos</h3>
+                <p class="es">Máximo 15 estudiantes por clase para mejor atención</p>
+                <p class="pt">Máximo 15 alunos por aula para melhor atenção</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon"><i class="fas fa-chart-line"></i></div>
+                <h3 class="es">Progreso Garantizado</h3>
+                <h3 class="pt">Progresso Garantido</h3>
+                <p class="es">Seguimiento personalizado de tu avance cada semana</p>
+                <p class="pt">Acompanhamento personalizado do seu progresso a cada semana</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon"><i class="fas fa-headset"></i></div>
+                <h3 class="es">Soporte 24/7</h3>
+                <h3 class="pt">Suporte 24/7</h3>
+                <p class="es">Equipo disponible para resolver tus dudas en cualquier momento</p>
+                <p class="pt">Equipe disponível para resolver suas dúvidas a qualquer momento</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Levels Section -->
+    <section class="levels" id="levels">
+        <div class="section-header">
+            <h2 class="es">Nuestros Niveles de Aprendizaje</h2>
+            <h2 class="pt">Nossos Níveis de Aprendizado</h2>
+            <p class="es">Desde principiante hasta avanzado, adapta tu ritmo</p>
+            <p class="pt">De iniciante a avançado, adapte seu ritmo</p>
+        </div>
+        <div class="levels-grid">
+            <div class="level-card">
+                <div class="level-badge">A1</div>
+                <h3 class="es">Principiante</h3>
+                <h3 class="pt">Iniciante</h3>
+                <p class="es">Aprende lo básico: saludos, presentaciones y vocabulario fundamental para tu día a día.</p>
+                <p class="pt">Aprenda o básico: saudações, apresentações e vocabulário fundamental para seu dia a dia.</p>
+                <a href="#pricing" class="btn btn-primary" style="font-size: 0.9rem; padding: 0.7rem 1.5rem;">Ver Más</a>
+            </div>
+            <div class="level-card">
+                <div class="level-badge">B1</div>
+                <h3 class="es">Intermedio</h3>
+                <h3 class="pt">Intermediário</h3>
+                <p class="es">Desarrolla conversaciones más complejas y maneja situaciones de negocios con confianza.</p>
+                <p class="pt">Desenvolva conversas mais complexas e maneje situações de negócios com confiança.</p>
+                <a href="#pricing" class="btn btn-primary" style="font-size: 0.9rem; padding: 0.7rem 1.5rem;">Ver Más</a>
+            </div>
+            <div class="level-card">
+                <div class="level-badge">C1</div>
+                <h3 class="es">Avanzado</h3>
+                <h3 class="pt">Avançado</h3>
+                <p class="es">Comunicación fluida en cualquier contexto profesional. Domina matices del idioma brasileño y portugués.</p>
+                <p class="pt">Comunicação fluente em qualquer contexto profissional. Domine nuances do português brasileiro e europeu.</p>
+                <a href="#pricing" class="btn btn-primary" style="font-size: 0.9rem; padding: 0.7rem 1.5rem;">Ver Más</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Schedules Section -->
+    <section class="schedules" id="schedules">
+        <div class="schedules-container">
+            <div class="section-header">
+                <h2 class="es">Horarios Disponibles</h2>
+                <h2 class="pt">Horários Disponíveis</h2>
+                <p class="es">Elige el horario que mejor se adapte a tu rutina</p>
+                <p class="pt">Escolha o horário que melhor se adapte à sua rotina</p>
+            </div>
+            <div class="schedules-grid">
+                <div class="schedule-card">
+                    <i class="fas fa-sun" style="font-size: 2.5rem; margin-bottom: 1rem; color: #fbbf24;"></i>
+                    <div class="schedule-time">6:00 - 8:00 AM</div>
+                    <p class="es">Mañanas</p>
+                    <p class="pt">Manhã</p>
+                    <p class="es">Perfecto para madrugadores que quieren comenzar el día aprendiendo</p>
+                    <p class="pt">Perfeito para madrugadores que querem começar o dia aprendendo</p>
+                </div>
+                <div class="schedule-card">
+                    <i class="fas fa-cloud-sun" style="font-size: 2.5rem; margin-bottom: 1rem; color: #f97316;"></i>
+                    <div class="schedule-time">2:00 - 4:00 PM</div>
+                    <p class="es">Tardes</p>
+                    <p class="pt">Tarde</p>
+                    <p class="es">Ideal para profesionales con horario laboral flexible</p>
+                    <p class="pt">Ideal para profissionais com horário de trabalho flexível</p>
+                </div>
+                <div class="schedule-card">
+                    <i class="fas fa-moon" style="font-size: 2.5rem; margin-bottom: 1rem; color: #60a5fa;"></i>
+                    <div class="schedule-time">7:00 - 9:00 PM</div>
+                    <p class="es">Noches</p>
+                    <p class="pt">Noite</p>
+                    <p class="es">La opción más popular: después del trabajo o escuela</p>
+                    <p class="pt">A opção mais popular: depois do trabalho ou escola</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Pricing Section -->
+    <section class="pricing" id="pricing">
+        <div class="section-header">
+            <h2 class="es">Planes de Precios Accesibles</h2>
+            <h2 class="pt">Planos de Preço Acessíveis</h2>
+            <p class="es">Inversión en tu futuro profesional a partir de $29 USD</p>
+            <p class="pt">Investimento no seu futuro profissional a partir de $29 USD</p>
+        </div>
+        <div class="pricing-grid">
+            <div class="price-card">
+                <h3 class="es">1 Mes</h3>
+                <h3 class="pt">1 Mês</h3>
+                <div class="price-amount">$29</div>
+                <div class="price-period es">Por mes</div>
+                <div class="price-period pt">Por mês</div>
+                <ul class="price-features">
+                    <li class="es">4 clases en vivo</li>
+                    <li class="pt">4 aulas ao vivo</li>
+                    <li class="es">Acceso a materiales</li>
+                    <li class="pt">Acesso a materiais</li>
+                    <li class="es">1 clase grabada</li>
+                    <li class="pt">1 aula gravada</li>
+                </ul>
+                <button class="btn btn-secondary" style="width: 100%; margin-top: 1.5rem;">
+                    <span class="es">Comprar Ahora</span>
+                    <span class="pt">Comprar Agora</span>
+                </button>
+            </div>
+            <div class="price-card featured">
+                <h3 class="es">3 Meses</h3>
+                <h3 class="pt">3 Meses</h3>
+                <div class="price-amount">$49</div>
+                <div class="price-period es">Ahorras $38</div>
+                <div class="price-period pt">Economize $38</div>
+                <ul class="price-features">
+                    <li class="es">12 clases en vivo</li>
+                    <li class="pt">12 aulas ao vivo</li>
+                    <li class="es">Acceso ilimitado a materiales</li>
+                    <li class="pt">Acesso ilimitado a materiais</li>
+                    <li class="es">Todas las clases grabadas</li>
+                    <li class="pt">Todas as aulas gravadas</li>
+                    <li class="es">Seguimiento personal</li>
+                    <li class="pt">Acompanhamento pessoal</li>
+                </ul>
+                <button class="btn btn-primary" style="width: 100%; margin-top: 1.5rem;">
+                    <span class="es">Comprar Ahora</span>
+                    <span class="pt">Comprar Agora</span>
+                </button>
+            </div>
+            <div class="price-card">
+                <h3 class="es">6 Meses</h3>
+                <h3 class="pt">6 Meses</h3>
+                <div class="price-amount">$79</div>
+                <div class="price-period es">Ahorras $95</div>
+                <div class="price-period pt">Economize $95</div>
+                <ul class="price-features">
+                    <li class="es">24 clases en vivo</li>
+                    <li class="pt">24 aulas ao vivo</li>
+                    <li class="es">Acceso VIP a comunidad</li>
+                    <li class="pt">Acesso VIP à comunidade</li>
+                    <li class="es">Todas las clases grabadas</li>
+                    <li class="pt">Todas as aulas gravadas</li>
+                    <li class="es">Certificado oficial</li>
+                    <li class="pt">Certificado oficial</li>
+                    <li class="es">Bonus: 2 clases particulares</li>
+                    <li class="pt">Bônus: 2 aulas particulares</li>
+                </ul>
+                <button class="btn btn-secondary" style="width: 100%; margin-top: 1.5rem;">
+                    <span class="es">Comprar Ahora</span>
+                    <span class="pt">Comprar Agora</span>
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section class="testimonials">
+        <div class="testimonials-container">
+            <div class="section-header">
+                <h2 class="es">Lo Que Dicen Nuestros Estudiantes</h2>
+                <h2 class="pt">O Que Dizem Nossos Alunos</h2>
+            </div>
+            <div class="testimonials-grid">
+                <div class="testimonial-card">
+                    <div class="testimonial-stars">★★★★★</div>
+                    <p class="testimonial-text es">"Excelente curso. Los profesores son muy pacientes y las clases muy interactivas. Recomendado 100%"</p>
+                    <p class="testimonial-text pt">"Excelente curso. Os professores são muito pacientes e as aulas muito interativas. Recomendado 100%"</p>
+                    <div class="testimonial-author">María González</div>
+                    <div class="testimonial-role es">Contador, Guatemala</div>
+                    <div class="testimonial-role pt">Contador, Guatemala</div>
+                </div>
+                <div class="testimonial-card">
+                    <div class="testimonial-stars">★★★★★</div>
+                    <p class="testimonial-text es">"Mejoré mi portugués para hablar con mis clientes en Brasil. Muy práctico y efectivo."</p>
+                    <p class="testimonial-text pt">"Melhorei meu português para falar com meus clientes no Brasil. Muito prático e eficaz."</p>
+                    <div class="testimonial-author">Carlos Mendez</div>
+                    <div class="testimonial-role es">Empresario, Ciudad de Guatemala</div>
+                    <div class="testimonial-role pt">Empresário, Cidade da Guatemala</div>
+                </div>
+                <div class="testimonial-card">
+                    <div class="testimonial-stars">★★★★★</div>
+                    <p class="testimonial-text es">"Los horarios flexibles me permitieron estudiar sin dejar mi trabajo. Muy satisfecha con los resultados."</p>
+                    <p class="testimonial-text pt">"Os horários flexíveis me permitiram estudar sem deixar meu trabalho. Muito satisfeita com os resultados."</p>
+                    <div class="testimonial-author">Sofía López</div>
+                    <div class="testimonial-role es">Gerente de Marketing, Zona 10</div>
+                    <div class="testimonial-role pt">Gerente de Marketing, Zona 10</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="faq">
+        <div class="section-header">
+            <h2 class="es">Preguntas Frecuentes</h2>
+            <h2 class="pt">Perguntas Frequentes</h2>
+        </div>
+        <div class="faq-grid">
+            <div>
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <span class="es">¿Necesito experiencia previa?</span>
+                        <span class="pt">Preciso de experiência prévia?</span>
+                        <span class="faq-toggle">+</span>
+                    </div>
+                    <div class="faq-answer es">No, nuestros cursos están diseñados para todos los niveles, desde principiantes absolutos hasta avanzados. Tenemos un nivel para cada persona.</div>
+                    <div class="faq-answer pt">Não, nossos cursos foram projetados para todos os níveis, desde iniciantes absolutos até avançados. Temos um nível para cada pessoa.</div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <span class="es">¿Puedo cambiar de horario?</span>
+                        <span class="pt">Posso mudar de horário?</span>
+                        <span class="faq-toggle">+</span>
+                    </div>
+                    <div class="faq-answer es">Sí, puedes cambiar de horario en cualquier momento. Solo contacta a nuestro equipo y hacemos el ajuste.</div>
+                    <div class="faq-answer pt">Sim, você pode mudar de horário a qualquer momento. Apenas entre em contato com nossa equipe e fazemos o ajuste.</div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <span class="es">¿Hay garantía de satisfacción?</span>
+                        <span class="pt">Há garantia de satisfação?</span>
+                        <span class="faq-toggle">+</span>
+                    </div>
+                    <div class="faq-answer es">Sí, ofrecemos una garantía de 7 días. Si no estás satisfecho, devolvemos tu dinero sin preguntas.</div>
+                    <div class="faq-answer pt">Sim, oferecemos uma garantia de 7 dias. Se não estiver satisfeito, devolvemos seu dinheiro sem perguntas.</div>
+                </div>
+            </div>
+            <div>
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <span class="es">¿Cómo accedo a las clases?</span>
+                        <span class="pt">Como acesso as aulas?</span>
+                        <span class="faq-toggle">+</span>
+                    </div>
+                    <div class="faq-answer es">Al completar tu registro y pago, recibirás un email con tus credenciales de acceso a la plataforma dentro de 24 horas.</div>
+                    <div class="faq-answer pt">Ao completar seu registro e pagamento, você receberá um e-mail com suas credenciais de acesso à plataforma dentro de 24 horas.</div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <span class="es">¿Sirve para expandir mi carrera?</span>
+                        <span class="pt">Serve para expandir minha carreira?</span>
+                        <span class="faq-toggle">+</span>
+                    </div>
+                    <div class="faq-answer es">Absolutamente. Muchos de nuestros estudiantes han conseguido empleos o promociones gracias al portugués. El certificado es reconocido internacionalmente.</div>
+                    <div class="faq-answer pt">Absolutamente. Muitos dos nossos alunos conseguiram empregos ou promoções graças ao português. O certificado é reconhecido internacionalmente.</div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <span class="es">¿Qué métodos de pago aceptan?</span>
+                        <span class="pt">Quais métodos de pagamento vocês aceitam?</span>
+                        <span class="faq-toggle">+</span>
+                    </div>
+                    <div class="faq-answer es">Aceptamos tarjetas de crédito/débito, PayPal, transferencia bancaria y otros métodos seguros a través de Hotmart.</div>
+                    <div class="faq-answer pt">Aceitamos cartões de crédito/débito, PayPal, transferência bancária e outros métodos seguros através da Hotmart.</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta-section">
+        <h2 class="es">¿Listo Para Transformar Tu Carrera?</h2>
+        <h2 class="pt">Pronto Para Transformar Sua Carreira?</h2>
+        <p class="es">Únete a cientos de profesionales que ya están aprendiendo portugués con nosotros. Comienza tu transformación hoy.</p>
+        <p class="pt">Junte-se a centenas de profissionais que já estão aprendendo português conosco. Comece sua transformação hoje.</p>
+        <a href="#pricing" class="btn-white">
+            <span class="es">Inscribirse Ahora - Menos de $50</span>
+            <span class="pt">Inscrever-se Agora - Menos de $50</span>
+        </a>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>Learn Online Academy</h3>
+                <p class="es">Tu plataforma de aprendizaje de portugués diseñada para profesionales que buscan expandir sus oportunidades globales.</p>
+                <p class="pt">Sua plataforma de aprendizagem de português projetada para profissionais que buscam expandir suas oportunidades globais.</p>
+            </div>
+            <div class="footer-section">
+                <h3 class="es">Enlaces</h3>
+                <h3 class="pt">Links</h3>
+                <ul>
+                    <li><a href="#features" class="es">Características</a><a href="#features" class="pt">Características</a></li>
+                    <li><a href="#levels" class="es">Niveles</a><a href="#levels" class="pt">Níveis</a></li>
+                    <li><a href="#schedules" class="es">Horarios</a><a href="#schedules" class="pt">Horários</a></li>
+                    <li><a href="#pricing" class="es">Precios</a><a href="#pricing" class="pt">Preços</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3 class="es">Soporte</h3>
+                <h3 class="pt">Suporte</h3>
+                <ul>
+                    <li><a href="mailto:support@learnacademy.com">support@learnacademy.com</a></li>
+                    <li><a href="tel:+50276543210" class="es">+502 7654-3210</a><a href="tel:+50276543210" class="pt">+502 7654-3210</a></li>
+                    <li><a href="#" class="es">Contacto</a><a href="#" class="pt">Contato</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3 class="es">Síguenos</h3>
+                <h3 class="pt">Nos Siga</h3>
+                <ul style="flex-direction: row; gap: 1rem;">
+                    <li><a href="#"><i class="fab fa-facebook"></i> Facebook</a></li>
+                    <li><a href="#"><i class="fab fa-instagram"></i> Instagram</a></li>
+                    <li><a href="#"><i class="fab fa-youtube"></i> YouTube</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p class="es">© 2024 Learn Online Academy. Todos los derechos reservados.</p>
+            <p class="pt">© 2024 Learn Online Academy. Todos os direitos reservados.</p>
+        </div>
+    </footer>
+
+    <script>
+        // Language Toggle
+        function toggleLanguage() {
+            document.body.classList.toggle('es-show');
+            document.body.classList.toggle('pt-show');
+        }
+
+        // FAQ Toggle
+        document.querySelectorAll('.faq-question').forEach(question => {
+            question.addEventListener('click', () => {
+                const faqItem = question.parentElement;
+                faqItem.classList.toggle('active');
+            });
+        });
+
+        // Smooth Scroll for buttons
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({ behavior: 'smooth' });
+                }
+            });
+        });
+
+        // Update button links to Hotmart (replace with your actual links)
+        document.querySelectorAll('.btn-primary, .btn-secondary').forEach(btn => {
+            if (btn.textContent.includes('Comprar') || btn.textContent.includes('Inscrib') || btn.textContent.includes('Inscreva')) {
+                btn.href = 'https://pay.hotmart.com/YOUR-LINK-HERE'; // Replace with your Hotmart link
+                btn.target = '_blank';
+            }
+        });
+    </script>
+</body>
+</html>
